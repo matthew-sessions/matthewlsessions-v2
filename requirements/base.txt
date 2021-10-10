@@ -2,15 +2,6 @@ fastapi
 uvicorn
 python-decouple
 dnspython
-pymongo
-pydantic
-motor
-pymongo[srv]
-python-jose
-uvicorn
-python-decouple
-dnspython
-pymongo
 pydantic
 motor
 pymongo[srv]
