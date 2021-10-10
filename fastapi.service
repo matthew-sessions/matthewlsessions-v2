@@ -2,7 +2,7 @@
 Description=Boot up fastapi
 
 [Service]
-ExecStart=/bin/bash /home/FastAPI_MongoDB/start.sh
+ExecStart=/bin/bash /FastAPI_MongoDB/start.sh
 
 [Install]
 WantedBy=multi-user.target
