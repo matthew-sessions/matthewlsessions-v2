@@ -1,0 +1,8 @@
+[Unit]
+Description=Boot up fastapi
+
+[Service]
+ExecStart=/bin/bash /FastAPI_MongoDB/loadbalance_run.sh
+
+[Install]
+WantedBy=multi-user.target
