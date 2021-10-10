@@ -25,8 +25,8 @@ key_file = key["Body"].read().decode("utf-8")
 chain_file = chain["Body"].read().decode("utf-8")
 env_file = env["Body"].read().decode("utf-8")
 
-key_writer = open("ssl/s.key", "w")
-chain_writer = open("ssl/chain.csr", "w")
+key_writer = open("nginx/ssl/s.key", "w")
+chain_writer = open("nginx/ssl/chain.csr", "w")
 env_writer = open(".env", "w")
 
 key_writer.write(key_file)
