@@ -1,5 +1,8 @@
 # FastAPI and MongoDB
 
+
+<img src="https://geekflare.com/wp-content/uploads/2019/07/fast-api-logo.png" alt="drawing" width="200"/> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZONviYpvlwUX9mo0d1X1aH9k0IUAVTF-DRzZ4qQLleZI9l6qLVOOF9SfskTzN8JnA0g&usqp=CAU" alt="drawing" width="200"/> <img src="https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png" alt="drawing" width="200"/>
+
 ## Overview:
 
 This is a template of a base project for FastAPI that interfaces with MongoDB. Basic Authentication and email validation are implemented by default. The project is run on Docker and is able to spin up a local instance of MongoDB. The deployment configuration is set up to be deployed on a single [Vultr](https://my.vultr.com/) Instance running on Nginx. This project assumes that SSL Certs and environment variables are uploaded on Vultr Object Storage.
