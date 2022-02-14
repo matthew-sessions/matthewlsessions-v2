@@ -1,0 +1,78 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Projects from '../components/Home/Projects';
+import Experience from '../components/Home/Experience';
+import Skills from '../components/Home/Skills';
+import Languages from '../components/Home/Languages';
+import Education from '../components/Home/Education';
+
+export async function getStaticProps() {
+  const res = await fetch("http://0.0.0.0:8000/api/segments/all");
+  const data = await res.json();
+  let info = {
+    projects: [],
+    history: [],
+    skills: [],
+    languages: [],
+    education: []
+  };
+  data.data.forEach(value => {
+    if (value.type == 'projects') {
+      info.projects.push(value)
+    } else if (value.type == "history") {
+      info.history.push(value)
+    } else if (value.type == "skills") {
+      info.skills.push(value)
+    } else if (value.type == "languages") {
+      info.languages.push(value)
+    } else if (value.type == "education") {
+      info.education.push(value)
+    }
+  });
+  return {
+    props: {
+      info
+    },
+    revalidate: 20
+  }
+}
+
+export default function Home({ info }) {
+
+  return (
+    <div className=" h-fit bg-zinc-100">
+      <div className=" px-5  md:px-4 pb-3 bg-zinc-600 md:mx-2 pt-3 md:flex md:flex-row w-screen shadow-md">
+        <div className="sm:w-full md:w-9/12 lg:w-3/5">
+          <div className="flex flex-row">
+            <div className="w-3/12">
+              <img className=" w-28 rounded-2xl float-right mr-3" src="https://matthewlsessions.com/images/me.jpeg" />
+            </div>
+            <div className="w-9/12">
+              <p className=" text-2xl text-gray-300 md:text-3xl font-semibold">Matthew L Sessions</p>
+              <p className=" text-xl text-gray-300 md:text-2xl ">Software Engineer (Data)</p>
+              <a href='https://www.linkedin.com/in/matthew-sessions/' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-linkedin-in" /></a>
+              <a href='https://github.com/matthew-sessions' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-github" /></a>
+              <a href='https://www.facebook.com/matthewlsessions'><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-facebook-f" /></a>
+              <a href='https://www.youtube.com/channel/UC2voQJqWIxa24tMSpLpj91Q'><FontAwesomeIcon className=' text-gray-100 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-youtube" /></a>
+            </div>
+          </div>
+        </div>
+        <div className="sm:w-full md:w-3/12 lg:w-2/5">
+
+        </div>
+      </div>
+      <div>
+        <div className=" mx-2 md:mx-6 2xl:mx-44 md:flex md:flex-row">
+          <div className=' md:w-8/12 lg:w-9/12'>
+            <Projects projects={info.projects} />
+            <Experience history={info.history} />
+          </div>
+          <div className=' md:w-4/12 lg:w-3/12'>
+            <Skills skills={info.skills} />
+            <Languages languages={info.languages} />
+            <Education education={info.education} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

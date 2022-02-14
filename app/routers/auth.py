@@ -133,7 +133,4 @@ async def email_validation(email_details: EmailValidation):
         )
 
     token = auth_handler.encode_token(user_id)
-    return {
-        "token": token,
-        "ok": True
-    }
+    return {"token": token, "ok": True}

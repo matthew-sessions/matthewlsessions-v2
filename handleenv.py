@@ -4,7 +4,9 @@ from decouple import config
 # aws_access_key_id = config("ACCESS_KEY_ID")
 # aws_secret_access_key = config("SECRET_ACCESS_KEY")
 # endpoint_url = config("OBJECT_URL")
-aws_access_key_id, aws_secret_access_key, endpoint_url = config("VULTR_OBJECT").split("&")
+aws_access_key_id, aws_secret_access_key, endpoint_url = config("VULTR_OBJECT").split(
+    "&"
+)
 
 
 session = boto3.session.Session()

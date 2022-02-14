@@ -14,22 +14,9 @@ services:
     depends_on:
       - mongo
 
-  mongo:
-    image: mongo:latest
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: rootpassword
-    ports:
-      - 27017:27017
-    volumes:
-      - mongodb_data_container:/data/db
-
   nginx:
     build: ./nginx
     ports:
       - "80:80"
     depends_on:
       - web
-
-volumes:
-  mongodb_data_container:
