@@ -38,5 +38,4 @@ async def startup_event():
         pass_id=True,
     )
     for data in housing_data:
-        print(data)
         DynamicNameSearch.load_data(data)

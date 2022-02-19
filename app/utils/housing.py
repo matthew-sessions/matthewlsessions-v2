@@ -24,7 +24,6 @@ class DynamicNameSearch:
             )
         else:
             search_term_e = f"{search_term} {state}".lower()
-            print(search_term_e)
             cls.non_zip_set.add(search_term_e)
             cls.non_zip_mapping[search_term_e] = cls.pack_value(
                 region_id, search_term, region_type, state, state

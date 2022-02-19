@@ -11,12 +11,18 @@ services:
       - .:/app
     ports:
       - 8000:8000
-    depends_on:
-      - mongo
 
+  next:
+    build: ./nextjs
+    command: yarn start
+    ports:
+      - "3000:3000"
+    # depends_on:
+    #   - nginx
   nginx:
     build: ./nginx
     ports:
       - "80:80"
     depends_on:
       - web
+      - next

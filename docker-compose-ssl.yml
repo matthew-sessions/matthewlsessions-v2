@@ -12,6 +12,12 @@ services:
     ports:
       - 8000:8000
 
+  next:
+    build: ./nextjs
+    command: yarn start
+    ports:
+      - "3000:3000"
+
   nginx:
     build:
       context: ./nginx
@@ -21,3 +27,4 @@ services:
       - "443:443"
     depends_on:
       - web
+      - next
