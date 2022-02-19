@@ -12,12 +12,17 @@ class Result:
     link: dict
     title: dict
     picture: dict
+    orderkey: dict
     info: Optional[list] = field(default_factory=list)
     content: list = field(default_factory=list)
 
     @property
     def description_str(self):
         return self.parse_text(self.description)
+
+    @property
+    def orderkey_str(self):
+        return self.parse_text(self.orderkey)
 
     @staticmethod
     def parse_text(blob):
@@ -74,7 +79,8 @@ class Result:
             "title": self.title_str,
             "info": self.info,
             "content": self.content,
-            "picture": self.picture_str
+            "picture": self.picture_str,
+            "orderkey": self.orderkey_str,
         }
 
     def parse_obj(self, blob):

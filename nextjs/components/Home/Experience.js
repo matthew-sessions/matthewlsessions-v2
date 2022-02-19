@@ -1,3 +1,4 @@
+// import Image from 'next/image'
 
 export default function Experience({ history }) {
     const parser = (items) => {
@@ -23,7 +24,7 @@ export default function Experience({ history }) {
                             <div className=" p-2 mb-3 m-2 " key={index}>
                                 <div className="flex flex-row">
                                     <div className=" ">
-                                        <img className=" max-w-[50px] rounded-xl" src={project.picture} />
+                                        <img alt="meaningfull text" width={45} height={45} className=" max-w-[50px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2">
                                         <p className=" text-lg font-semibold">{project.title}</p>

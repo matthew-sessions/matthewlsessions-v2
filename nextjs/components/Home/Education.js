@@ -1,4 +1,4 @@
-
+// import Image from 'next/image'
 
 export default function Education({ education }) {
     const parser = (items) => {
@@ -16,12 +16,12 @@ export default function Education({ education }) {
             <div>
                 {
                     education.map((project, index) => {
-                        console.log(project)
+
                         return (
                             <div className=" p-2 mb-3 m-2" key={index}>
                                 <div className="flex flex-row">
                                     < div className=" " >
-                                        <img className=" max-w-[45px] rounded-xl" src={project.picture} />
+                                        <img alt="meaningfull text" width={45} height={45} className=" max-w-[45px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2 mb-1">
                                         <p className=" text-xs font-semibold">{project.title}</p>

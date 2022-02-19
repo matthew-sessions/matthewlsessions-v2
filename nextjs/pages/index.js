@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Projects from '../components/Home/Projects';
-import Experience from '../components/Home/Experience';
-import Skills from '../components/Home/Skills';
-import Languages from '../components/Home/Languages';
-import Education from '../components/Home/Education';
+import Projects from '../components/home/Projects';
+import Experience from '../components/home/Experience';
+import Skills from '../components/home/Skills';
+import SpokenLs from '../components/home/SpokenLs';
+import Education from '../components/home/Education';
+import Image from 'next/image'
 
 export async function getStaticProps() {
   const res = await fetch("http://0.0.0.0:8000/api/segments/all");
@@ -40,11 +41,11 @@ export default function Home({ info }) {
 
   return (
     <div className=" h-fit bg-zinc-100">
-      <div className=" px-5  md:px-4 pb-3 bg-zinc-600 md:mx-2 pt-3 md:flex md:flex-row w-screen shadow-md">
+      <div className=" w-full px-5  md:px-4 pb-3 bg-zinc-600 md:mx-2 pt-3 md:flex md:flex-row w-screen shadow-md">
         <div className="sm:w-full md:w-9/12 lg:w-3/5">
           <div className="flex flex-row">
             <div className="w-3/12">
-              <img className=" w-28 rounded-2xl float-right mr-3" src="https://matthewlsessions.com/images/me.jpeg" />
+              <img alt="meaningfull text" width={45} height={45} className=" w-28 rounded-2xl float-right mr-3" src="https://matthewlsessions.com/images/me.jpeg" />
             </div>
             <div className="w-9/12">
               <p className=" text-2xl text-gray-300 md:text-3xl font-semibold">Matthew L Sessions</p>
@@ -68,7 +69,7 @@ export default function Home({ info }) {
           </div>
           <div className=' md:w-4/12 lg:w-3/12'>
             <Skills skills={info.skills} />
-            <Languages languages={info.languages} />
+            <SpokenLs ls={info.languages} />
             <Education education={info.education} />
           </div>
         </div>

@@ -1,4 +1,4 @@
-
+// import Image from 'next/image';
 
 export default function Projects({ projects }) {
     const parser = (items) => {
@@ -20,7 +20,7 @@ export default function Projects({ projects }) {
                             <div className=" p-2 mb-3 m-2 hover:bg-zinc-300 hover:rounded-xl" key={index}>
                                 <div className="flex flex-row">
                                     <div className=" ">
-                                        <img className=" max-w-[70px] md:max-w-[100px] rounded-xl" src={project.picture} />
+                                        <img alt="meaningfull text" width={90} height={70} className="  md:max-w-[100px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2">
                                         <p className=" text-lg font-semibold">{project.title}</p>

@@ -10,7 +10,7 @@ CONNECTION_STRING = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{DB_URI}"
 
 class Mongoify:
     CLIENT = AsyncIOMotorClient(CONNECTION_STRING)
-    DB = CLIENT.housing
+    DB = CLIENT.matthewlsessions
 
     @classmethod
     async def insert(cls, table, data):
@@ -29,11 +29,17 @@ class Mongoify:
 
     @classmethod
     async def find_specific(
-        cls, table: str, query: dict, fields: list, limit: int = 100, pass_id = False
+        cls,
+        table: str,
+        query: dict,
+        fields: list,
+        limit: int = 100,
+        pass_id=False,
+        order: list = [],
     ) -> dict:
         fields = {k: 1 for k in fields}
         fields["_id"] = pass_id
-        res = cls.DB[table].find(query, fields)
+        res = cls.DB[table].find(query, fields, sort=order)
         return await res.to_list(limit)
 
     @classmethod
