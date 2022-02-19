@@ -5,7 +5,12 @@ module.exports = {
     "./components/housing/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        catamaran: ['Catamaran', 'sans-serif'],
+        merriweather: ['Merriweather Sans', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }

@@ -4,10 +4,10 @@ import Experience from '../components/home/Experience';
 import Skills from '../components/home/Skills';
 import SpokenLs from '../components/home/SpokenLs';
 import Education from '../components/home/Education';
-import Image from 'next/image'
+import baseUrl from '../utils/baseUrl';
 
 export async function getStaticProps() {
-  const res = await fetch("http://0.0.0.0:8000/api/segments/all");
+  const res = await fetch(`${baseUrl}/api/segments/all`);
   const data = await res.json();
   let info = {
     projects: [],
@@ -41,15 +41,16 @@ export default function Home({ info }) {
 
   return (
     <div className=" h-fit bg-zinc-100">
-      <div className=" w-full px-5  md:px-4 pb-3 bg-zinc-600 md:mx-2 pt-3 md:flex md:flex-row w-screen shadow-md">
+
+      <div className=" w-full px-5  md:px-4 pb-3 bg-zinc-800 md:mx-2 pt-3 md:flex md:flex-row shadow-md">
         <div className="sm:w-full md:w-9/12 lg:w-3/5">
           <div className="flex flex-row">
             <div className="w-3/12">
               <img alt="meaningfull text" width={45} height={45} className=" w-28 rounded-2xl float-right mr-3" src="https://matthewlsessions.com/images/me.jpeg" />
             </div>
             <div className="w-9/12">
-              <p className=" text-2xl text-gray-300 md:text-3xl font-semibold">Matthew L Sessions</p>
-              <p className=" text-xl text-gray-300 md:text-2xl ">Software Engineer (Data)</p>
+              <p className=" text-2xl text-gray-300 md:text-3xl font-catamaran">Matthew L Sessions</p>
+              <p className=" text-xl text-gray-300 md:text-2xl font-catamaran ">Software Engineer (Data)</p>
               <a href='https://www.linkedin.com/in/matthew-sessions/' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-linkedin-in" /></a>
               <a href='https://github.com/matthew-sessions' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-github" /></a>
               <a href='https://www.facebook.com/matthewlsessions'><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-facebook-f" /></a>

@@ -6,7 +6,7 @@ export default function Experience({ history }) {
             if ("bulleted_list_item" in block) {
                 return (
                     <div className="" key={index}>
-                        <li className=" text-sm font-light">{block.bulleted_list_item}</li>
+                        <li className="text-zinc-800 text-sm font-light">{block.bulleted_list_item}</li>
                     </div>
                 )
             }
@@ -15,7 +15,7 @@ export default function Experience({ history }) {
     }
     return (
         <div className=" md:px-4 pb-3 bg-zinc-200 md:mx-2 rounded-md shadow-md">
-            <p className=" ml-2 mb-3 mt-4 text-2xl font-semibold">Experience</p>
+            <p className="text-zinc-800  ml-2 mb-3 mt-4 text-2xl font-catamaran">Experience</p>
             <div>
                 {
                     history.map((project, index) => {
@@ -27,8 +27,8 @@ export default function Experience({ history }) {
                                         <img alt="meaningfull text" width={45} height={45} className=" max-w-[50px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2">
-                                        <p className=" text-lg font-semibold">{project.title}</p>
-                                        <p className=" text-sm">{project.description}</p>
+                                        <p className="text-zinc-800  text-lg font-catamaran">{project.title}</p>
+                                        <p className="text-zinc-800  text-sm">{project.description}</p>
                                     </div>
 
                                 </div>

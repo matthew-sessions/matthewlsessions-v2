@@ -4,16 +4,17 @@ import HousingChart from '../../components/housing/HousingChart';
 import ThreeYearChange from '../../components/housing/ThreeYearChange';
 import StatCard from "../../components/housing/StatCard";
 import Search from "../../components/housing/Search";
+import baseUrl from "../../utils/baseUrl";
 
 const fetchCart = async (setData, id) => {
-    const response = await fetch(`http://0.0.0.0:8000/api/housing/deepsearch/${id}`);
+    const response = await fetch(`${baseUrl}/api/housing/deepsearch/${id}`);
     console.log(response.status)
     if (response.status === 201) {
         const d = await response.json();
         setData(d)
     } else {
         // console.log(response)
-        setData("test")
+        setData(null)
     }
 };
 
@@ -36,7 +37,7 @@ const SingleLocation = () => {
     }
     return (
         <div className=" pb-9 h-full bg-zinc-700">
-            <div className=" bg-zinc-600 h-16 shadow-lg pt-4 pl-4 font-semibold text-xl"><p className=" italic text-slate-50">Data From Zillow</p></div>
+            <div className=" bg-zinc-600 h-16 shadow-lg pt-4 pl-4 font-catamaran text-xl"><p className=" italic text-slate-50">Data From Zillow</p></div>
             <div className="max-w-[1500px] m-auto ">
                 <div className="flex flex-wrap m-auto mt-5 mb-5 ">
                     <div className=" px-2 pb-3 w-full  md:w-4/12 ">

@@ -5,14 +5,14 @@ export default function Education({ education }) {
         return items.map((block, index) => {
             return (
                 <div className="" key={index}>
-                    <p className=" text-sm font-light">{block.paragraph}</p>
+                    <p className="text-zinc-800 text-sm font-light">{block.paragraph}</p>
                 </div>
             )
         })
     }
     return (
         <div className=" md:px-4 pb-3 bg-zinc-200 md:mx-2 rounded-md shadow-md">
-            <p className=" ml-2 mb-3 mt-4 text-2xl font-semibold">Education</p>
+            <p className=" ml-2 mb-3 mt-4 text-2xl font-catamaran">Education</p>
             <div>
                 {
                     education.map((project, index) => {
@@ -24,8 +24,8 @@ export default function Education({ education }) {
                                         <img alt="meaningfull text" width={45} height={45} className=" max-w-[45px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2 mb-1">
-                                        <p className=" text-xs font-semibold">{project.title}</p>
-                                        <p className=" text-xs">{project.description}</p>
+                                        <p className="text-zinc-800  text-xs font-catamaran">{project.title}</p>
+                                        <p className="text-zinc-800  text-xs">{project.description}</p>
                                     </div>
 
                                 </div>
