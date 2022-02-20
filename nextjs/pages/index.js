@@ -6,7 +6,7 @@ import SpokenLs from '../components/home/SpokenLs';
 import Education from '../components/home/Education';
 import baseUrl from '../utils/baseUrl';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${baseUrl}/api/segments/all`);
   const data = await res.json();
   let info = {
@@ -32,8 +32,7 @@ export async function getStaticProps() {
   return {
     props: {
       info
-    },
-    revalidate: 20
+    }
   }
 }
 
