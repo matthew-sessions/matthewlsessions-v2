@@ -31,12 +31,12 @@ async def root():
 @app.on_event("startup")
 async def startup_event():
     print("starting up")
-    # housing_data = await Mongoify.find_specific(
-    #     "housingblobdata",
-    #     {},
-    #     fields=["regionName", "regionState", "regionType"],
-    #     limit=70000,
-    #     pass_id=True,
-    # )
-    # for data in housing_data:
-    #     DynamicNameSearch.load_data(data)
+    housing_data = await Mongoify.find_specific(
+        "housingblobdata",
+        {},
+        fields=["regionName", "regionState", "regionType"],
+        limit=70000,
+        pass_id=True,
+    )
+    for data in housing_data:
+        DynamicNameSearch.load_data(data)

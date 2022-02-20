@@ -46,4 +46,4 @@ class ImageInterface:
 
     @classmethod
     def upload_obj(cls, data, bucket, key):
-        return cls.client.upload_fileobj(data, bucket, key)
+        return cls.client.upload_fileobj(data, bucket, key, ExtraArgs={'ACL':'public-read'})

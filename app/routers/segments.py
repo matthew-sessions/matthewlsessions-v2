@@ -6,6 +6,7 @@ from app.Notion.timers import pull_segments
 from app.utils.image_manager import ImageInterface
 import random
 from starlette.responses import RedirectResponse
+import decouple
 
 
 router = APIRouter(
@@ -13,6 +14,8 @@ router = APIRouter(
     tags=["api"],
     responses={404: {"description": "Not found", "ok": False}},
 )
+
+KEY = decouple.config("access_key_id")
 
 
 @router.get("/segments/all", status_code=201)
@@ -35,25 +38,28 @@ async def refresh():
 
     return {"status": "created", "ok": True}
 
-@router.get("/upload", response_class=HTMLResponse)
+@router.get(f"/upload/{KEY}", response_class=HTMLResponse)
 def render():
-    return """
-    <form action="/api/upload" enctype="multipart/form-data" method="post">
+    return f"""
+    <form action="/api/upload/{KEY}" enctype="multipart/form-data" method="post">
         <input name="file" type="file">
         <input type="submit">
     </form>
     """
 
-@router.post("/upload", response_class=HTMLResponse)
+@router.post(f"/upload/{KEY}", response_class=HTMLResponse)
 def upload_img(file: UploadFile = File(...)):
     name = file.filename
     f = file.file
 
-    ImageInterface.upload_obj(f, "siteimages", name)
-    # res = drive.put(name, f)
-    return """
-    <form action="/api/upload" enctype="multipart/form-data" method="post">
+    res = ImageInterface.upload_obj(f, "siteimages", name)
+
+    return f"""
+    <form action="/api/upload/{KEY}" enctype="multipart/form-data" method="post">
         <input name="file" type="file">
         <input type="submit">
     </form>
+    <div>
+    https://ewr1.vultrobjects.com/siteimages/{name}
+    </div>
     """
