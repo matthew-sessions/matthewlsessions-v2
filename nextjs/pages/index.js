@@ -39,9 +39,9 @@ export async function getServerSideProps() {
 export default function Home({ info }) {
 
   return (
-    <div className=" h-screen bg-zinc-100">
+    <div className=" h-fit pb-12 bg-zinc-100">
 
-      <div className=" w-full px-5  md:px-4 pb-3 bg-zinc-800 md:mx-2 pt-3 md:flex md:flex-row shadow-md">
+      <div className=" w-full px-5 pb-3  md:px-4 bg-zinc-800 md:mx-2 pt-3 md:flex md:flex-row shadow-md">
         <div className="sm:w-full md:w-9/12 lg:w-3/5">
           <div className="flex flex-row">
             <div className="w-3/12">

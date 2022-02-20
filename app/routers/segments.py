@@ -1,9 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, Depends, HTTPException, File, UploadFile
+from fastapi.responses import JSONResponse, HTMLResponse, StreamingResponse
 from app.utils.mongo import Mongoify
 from app.utils.helpers import current_time, delta_validator
 from app.Notion.timers import pull_segments
+from app.utils.image_manager import ImageInterface
 import random
+from starlette.responses import RedirectResponse
+
 
 router = APIRouter(
     prefix="/api",
@@ -31,3 +34,26 @@ async def refresh():
     # Check if the user is already in DB
 
     return {"status": "created", "ok": True}
+
+@router.get("/upload", response_class=HTMLResponse)
+def render():
+    return """
+    <form action="/api/upload" enctype="multipart/form-data" method="post">
+        <input name="file" type="file">
+        <input type="submit">
+    </form>
+    """
+
+@router.post("/upload", response_class=HTMLResponse)
+def upload_img(file: UploadFile = File(...)):
+    name = file.filename
+    f = file.file
+
+    ImageInterface.upload_obj(f, "siteimages", name)
+    # res = drive.put(name, f)
+    return """
+    <form action="/api/upload" enctype="multipart/form-data" method="post">
+        <input name="file" type="file">
+        <input type="submit">
+    </form>
+    """

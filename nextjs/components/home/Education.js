@@ -24,7 +24,7 @@ export default function Education({ education }) {
                                         <img alt="meaningfull text" width={45} height={45} className=" max-w-[45px] rounded-xl" src={project.picture} />
                                     </div>
                                     <div className=" ml-2 mb-1">
-                                        <p className="text-zinc-800  text-xs font-catamaran">{project.title}</p>
+                                        <p className="text-zinc-800  text-sm font-catamaran">{project.title}</p>
                                         <p className="text-zinc-800  text-xs">{project.description}</p>
                                     </div>
 
