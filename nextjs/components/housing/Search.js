@@ -45,7 +45,7 @@ const Search = ({ id }) => {
                 </div>
                 <div className=" pt-3 w-3/12">
                     <a href={targetUri} >
-                        <button type="button" className="text-white bg-zinc-100 hover:bg-zinc-800 focus:ring-4 focus:ring-zinc-200 font-thin rounded-lg text-sm px-3 py-1 text-center mr-2 mb-2 dark:bg-zinc-500 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">View {result.RegionType}</button>
+                        <button type="button" className="text-white bg-zinc-400 hover:bg-zinc-800 focus:ring-4 focus:ring-zinc-200 font-thin rounded-lg text-sm px-3 py-1 text-center mr-2 mb-2 dark:bg-zinc-500 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">View {result.RegionType}</button>
                     </a>
                 </div>
             </div>

@@ -45,7 +45,7 @@ const StatCard = ({ data, info, focusRegion, focusState, title }) => {
         )
     } else {
         return (
-            <div>hi</div>
+            <div></div>
         )
     }
 
