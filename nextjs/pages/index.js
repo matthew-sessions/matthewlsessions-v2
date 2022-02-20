@@ -40,7 +40,7 @@ export async function getStaticProps() {
 export default function Home({ info }) {
 
   return (
-    <div className=" h-fit bg-zinc-100">
+    <div className=" h-screen bg-zinc-100">
 
       <div className=" w-full px-5  md:px-4 pb-3 bg-zinc-800 md:mx-2 pt-3 md:flex md:flex-row shadow-md">
         <div className="sm:w-full md:w-9/12 lg:w-3/5">
