@@ -3,6 +3,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/home/*.{js,jsx}",
     "./components/housing/*.{js,jsx}",
+    "./components/notion/*.{js,jsx}",
   ],
   theme: {
     extend: {

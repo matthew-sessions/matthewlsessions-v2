@@ -39,8 +39,7 @@ const HousingChart = ({ data }) => {
             })
 
             setRechartData(data.rechart)
-            // console.log(rechartData)
-            // console.log(rechartLines)
+
         }
     }, [data])
     return (

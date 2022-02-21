@@ -45,7 +45,7 @@ export default function Home({ info }) {
         <div className="sm:w-full md:w-9/12 lg:w-3/5">
           <div className="flex flex-row">
             <div className="w-3/12">
-              <img alt="meaningfull text" width={45} height={45} className=" w-28 rounded-2xl float-right mr-3" src="https://matthewlsessions.com/images/me.jpeg" />
+              <img alt="meaningfull text" width={45} height={45} className=" w-28 rounded-2xl float-right mr-3" src="https://ewr1.vultrobjects.com/siteimages/me.jpeg" />
             </div>
             <div className="w-9/12">
               <p className=" text-2xl text-gray-300 md:text-3xl font-catamaran">Matthew L Sessions</p>

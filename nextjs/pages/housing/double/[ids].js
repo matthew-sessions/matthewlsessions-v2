@@ -7,12 +7,11 @@ import baseUrl from "../../../utils/baseUrl";
 
 const fetchCart = async (setData, id) => {
     const response = await fetch(`${baseUrl}/api/housing/deepsearch/${id}`);
-    console.log(response.status)
+
     if (response.status === 201) {
         const d = await response.json();
         setData(d)
     } else {
-        // console.log(response)
         setData("test")
     }
 };
