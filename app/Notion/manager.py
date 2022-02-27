@@ -1,5 +1,8 @@
 import requests, json
 from app.utils.models import NotionObject
+from decouple import config
+
+token = config("notion_token")
 
 
 class NotionClient:
@@ -8,7 +11,7 @@ class NotionClient:
     session.headers = {
         "Content-Type": "application/json",
         "Notion-Version": "2021-08-16",
-        "Authorization": f"Bearer secret_sUSp4QpPDl36tfbZzFQwEyqCOSrzirqWB13aFKepgps",
+        "Authorization": f"Bearer {token}",
     }
 
     @classmethod
