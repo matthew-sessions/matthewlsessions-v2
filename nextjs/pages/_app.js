@@ -19,10 +19,10 @@ library.add(fab)
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script strategy="lazyOnLoad"
+      <Script id="goolgecall" strategy="lazyOnLoad"
         src={`https://www.googletagmanager.com/gtag/js?id=UA-108410204-1`}
       />
-      <Script strategy="lazyOnLoad">
+      <Script id="googlescript" strategy="lazyOnLoad">
         {
           `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
