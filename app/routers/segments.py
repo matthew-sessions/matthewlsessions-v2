@@ -7,6 +7,7 @@ from app.utils.image_manager import ImageInterface
 import random
 from starlette.responses import RedirectResponse
 import decouple
+from datetime import datetime, timezone
 
 
 router = APIRouter(
@@ -74,3 +75,15 @@ def upload_img(file: UploadFile = File(...)):
     https://ewr1.vultrobjects.com/siteimages/{name}
     </div>
     """
+
+@router.get("/email/{address}")
+async def email(address):
+    cur_time = datetime.now().replace(tzinfo=timezone.utc)
+    time = round(cur_time.timestamp() * 1000)
+    data = {
+        "email": address,
+        "timestamp": time,
+        "time": str(cur_time)
+    }
+    await Mongoify.insert("notion_emails", data)
+    return {"ok": True}
