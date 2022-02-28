@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import validator from 'validator'
+import validator from 'validator';
+import baseUrl from "../../utils/baseUrl";
 
 const provideEmail = (status, handleEmail, handle, searchTerm, alert) => {
     if (!status) {
@@ -46,6 +47,7 @@ export default function OneClickDeploy() {
         if (validator.isEmail(searchTerm)) {
             setFocus(true)
             localStorage.setItem("providedEmail", true)
+            fetch(`${baseUrl}/api/email/${searchTerm}`)
         } else {
             setAlert("Please provide a valid Email")
         }
