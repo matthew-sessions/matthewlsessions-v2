@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
+import Head from 'next/head';
 
 library.add(fab)
 
@@ -33,6 +34,9 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href="https://ewr1.vultrobjects.com/siteimages/letter-m.png" />
+      </Head>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
