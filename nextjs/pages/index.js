@@ -41,8 +41,8 @@ export default function Home({ info }) {
   return (
     <div className=" h-fit pb-12 bg-zinc-100">
 
-      <div className=" w-full px-5 pb-3  md:px-4 bg-zinc-800 md:mx-2 pt-3 md:flex md:flex-row shadow-md">
-        <div className="sm:w-full md:w-9/12 lg:w-3/5">
+      <div className=" w-full px-5 pb-3  md:px-4 bg-zinc-800  pt-3 md:flex md:flex-row shadow-md">
+        <div className=" md:pl-5 sm:w-full md:w-9/12 lg:w-3/5">
           <div className="flex flex-row">
             <div className="w-3/12">
               <img alt="meaningfull text" width={45} height={45} className=" w-28 rounded-2xl float-right mr-3" src="https://ewr1.vultrobjects.com/siteimages/me.jpeg" />
@@ -50,10 +50,12 @@ export default function Home({ info }) {
             <div className="w-9/12">
               <p className=" text-2xl text-gray-300 md:text-3xl font-catamaran">Matthew L Sessions</p>
               <p className=" text-xl text-gray-300 md:text-2xl font-catamaran ">Software Engineer (Data)</p>
-              <a href='https://www.linkedin.com/in/matthew-sessions/' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-linkedin-in" /></a>
-              <a href='https://github.com/matthew-sessions' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-github" /></a>
-              <a href='https://www.facebook.com/matthewlsessions'><FontAwesomeIcon className=' text-gray-300 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-facebook-f" /></a>
-              <a href='https://www.youtube.com/channel/UC2voQJqWIxa24tMSpLpj91Q'><FontAwesomeIcon className=' text-gray-100 mr-1 h-5 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-youtube" /></a>
+              <div className='flex flex-auto'>
+                <a href='https://www.linkedin.com/in/matthew-sessions/' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-6 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-linkedin-in" /></a>
+                <a href='https://github.com/matthew-sessions' ><FontAwesomeIcon className=' text-gray-300 mr-1 h-6 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-github" /></a>
+                <a href='https://www.facebook.com/matthewlsessions'><FontAwesomeIcon className=' text-gray-300 mr-1 h-6 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-facebook-f" /></a>
+                <a href='https://www.youtube.com/channel/UC2voQJqWIxa24tMSpLpj91Q'><FontAwesomeIcon className=' text-gray-100 mr-1 h-6 hover:bg-slate-400 p-1 rounded-md' icon="fab fa-youtube" /></a>
+              </div>
             </div>
           </div>
         </div>
