@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+nextjs/node_modules
+nextjs/package-lock.json
