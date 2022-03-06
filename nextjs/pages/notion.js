@@ -31,7 +31,7 @@ export default function Notion() {
       <Head>
         <link rel="shortcut icon" href="https://ewr1.vultrobjects.com/siteimages/notion_black_logo_icon_147102.png" />
         <title>Notion Powered Ecommerce</title>
-        <meta name="description" content="Created and manage product listings with Notion Powered Ecommerce. This application allows you to stict together Stripe and Notion to fully manage e-commerce listings." />
+        <meta name="description" content="Created and manage product listings with Notion Powered Ecommerce. This application allows you to stitch together Stripe and Notion to fully manage e-commerce listings." />
         <meta property="og:title" content="Notion Powered Ecommerce" />
         <meta property="og:description" content="Created and manage product listings with Notion Powered Ecommerce. This application allows you to stict together Stripe and Notion to fully manage e-commerce listings." />
         <meta property="og:url" content="https://matthewlsessions.com/notion" />
