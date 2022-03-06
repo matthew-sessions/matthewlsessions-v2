@@ -5,6 +5,7 @@ import Skills from '../components/home/Skills';
 import SpokenLs from '../components/home/SpokenLs';
 import Education from '../components/home/Education';
 import baseUrl from '../utils/baseUrl';
+import Head from 'next/head'
 
 export async function getServerSideProps() {
   const res = await fetch(`${baseUrl}/api/segments/all`);
@@ -40,6 +41,15 @@ export default function Home({ info }) {
 
   return (
     <div className=" h-fit pb-12 bg-zinc-100">
+      <Head>
+        <title>Matthew Sessions - Software Engineer (Data)</title>
+        <meta name="description" content="Matthew Sessions is a Software Engineer that focuses on Big Data solutions. He has worked abroad in China, speaks three languages and currently works at Expedia Group." />
+        <meta property="og:title" content="Matthew Sessions - Software Engineer (Data)" />
+        <meta property="og:description" content="Matthew Sessions is a Software Engineer that focuses on Big Data solutions. He has worked abroad in China, speaks three languages and currently works at Expedia Group." />
+        <meta property="og:url" content="https://matthewlsessions.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ewr1.vultrobjects.com/siteimages/me.jpeg"></meta>
+      </Head>
 
       <div className=" w-full px-5 pb-3  md:px-4 bg-zinc-800  pt-3 md:flex md:flex-row shadow-md">
         <div className=" md:pl-5 sm:w-full md:w-9/12 lg:w-3/5">
