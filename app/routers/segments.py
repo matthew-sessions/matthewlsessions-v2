@@ -90,6 +90,8 @@ async def email(address):
 
 @router.get("/addurl/{address}")
 async def url(address):
+    if "https" not in address and "http" not in address:
+        address = "https://" + address
     cur_time = datetime.now().replace(tzinfo=timezone.utc)
     time = round(cur_time.timestamp() * 1000)
     data = {"url": address, "timestamp": time, "time": str(cur_time)}
