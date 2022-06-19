@@ -25,9 +25,9 @@ export default function Wedding({ info }) {
                     <div className="flex items-center justify-center h-full">
                         <div className=" text-center p-4 rounded-xl ">
                             <p className=" text-cyan-50 font-bold text-5xl">Hey There!</p>
-                            <p className="text-cyan-50 font-bold text-2xl">Our wedding will be streaming on:</p>
+                            <p className="text-cyan-50 font-bold text-2xl">Our wedding will stream on:</p>
                             <p className="text-cyan-50 text-3xl italic">July 18, 4:30pm (HST)</p>
-                            <p className="text-cyan-50 text-l mt-4 ">a link link to the live stream will appear</p>
+                            <p className="text-cyan-50 text-l mt-4 ">a link to the live stream will appear</p>
                             <p className="text-cyan-50 text-l">here a few hours before the wedding. Thanks!</p>
                         </div>
                     </div>
