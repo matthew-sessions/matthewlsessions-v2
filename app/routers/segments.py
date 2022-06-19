@@ -39,6 +39,7 @@ async def refresh():
 
     return {"status": "created", "ok": True}
 
+
 @router.get(f"/upload/{KEY}", response_class=HTMLResponse)
 def render():
     return f"""
@@ -59,6 +60,7 @@ def render():
     
     """
 
+
 @router.post(f"/upload/{KEY}", response_class=HTMLResponse)
 def upload_img(file: UploadFile = File(...)):
     name = file.filename
@@ -76,14 +78,29 @@ def upload_img(file: UploadFile = File(...)):
     </div>
     """
 
+
 @router.get("/email/{address}")
 async def email(address):
     cur_time = datetime.now().replace(tzinfo=timezone.utc)
     time = round(cur_time.timestamp() * 1000)
-    data = {
-        "email": address,
-        "timestamp": time,
-        "time": str(cur_time)
-    }
+    data = {"email": address, "timestamp": time, "time": str(cur_time)}
     await Mongoify.insert("notion_emails", data)
     return {"ok": True}
+
+
+@router.get("/addurl/{address}")
+async def url(address):
+    cur_time = datetime.now().replace(tzinfo=timezone.utc)
+    time = round(cur_time.timestamp() * 1000)
+    data = {"url": address, "timestamp": time, "time": str(cur_time)}
+    await Mongoify.update("segments", {"key": "streamingurl"}, data)
+    return {"ok": True}
+
+
+@router.get("/stream")
+async def stream():
+    user_query = await Mongoify.find_one("segments", {"key": "streamingurl"})
+    if "_id" in user_query:
+        del user_query["_id"]
+    return user_query
+
