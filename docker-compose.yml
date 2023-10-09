@@ -20,8 +20,10 @@ services:
     build: ./nextjs
     ports:
       - "3000:3000"
-    # depends_on:
-    #   - nginx
+  note:
+    build: ./note-publish
+    ports:
+      - "3001:3001"
   nginx:
     build: ./nginx
     ports:
@@ -29,3 +31,4 @@ services:
     depends_on:
       - web
       - next
+      - note
