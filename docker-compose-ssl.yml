@@ -1,20 +1,20 @@
 version: '3.3'
 
 services:
-  web:
-    build: .
-    environment:
-      MONGO_PASSWORD: ${MONGO_PASSWORD}
-      MONGO_USER: ${MONGO_USER}
-      MONGO_URI: ${MONGO_URI}
-      hostname: ${hostname}
-      access_key_id: ${access_key_id}
-      secret_access_key: ${secret_access_key}
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    volumes:
-      - .:/app
-    ports:
-      - 8000:8000
+  # web:
+  #   build: .
+  #   environment:
+  #     MONGO_PASSWORD: ${MONGO_PASSWORD}
+  #     MONGO_USER: ${MONGO_USER}
+  #     MONGO_URI: ${MONGO_URI}
+  #     hostname: ${hostname}
+  #     access_key_id: ${access_key_id}
+  #     secret_access_key: ${secret_access_key}
+  #   command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #     - 8000:8000
 
   next:
     build: ./nextjs
@@ -34,6 +34,6 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - web
+      # - web
       - next
       - note
